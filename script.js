@@ -33,7 +33,8 @@ console.log('ciao mondo');
 // Creo un array con le email di chi può accedere
 // Chiedo all’utente di inserire la propria email
 // Controllo se l’email è nella lista e scorriamo l’array con un ciclo for per confrontare ogni email
-// Se la troviamo l'accesso è consentito, se non la troviamo l'accesso è negato e possiamo uscire dal ciclo
+// Se troviamo l'accesso andiamo avanti, 
+// Se troviamo l'accesso è negato, usciamo dal ciclo
 // Stampo un messaggio appropriato
 
 
@@ -43,14 +44,39 @@ const emailUtente = prompt("email");
 let accessoConsentito = false;
 
 for (let i = 0; i < listaEmail.length; i++) {
-  if (listaEmail[i] === emailUtente) {
-    accessoConsentito = true;
-    console.log("listaEmail");
-  }
+    if (listaEmail[i] === emailUtente) {
+        accessoConsentito = true;
+        console.log("listaEmail");
+    }
 }
 
 if (accessoConsentito) {
-  console.log("Accesso");
+    console.log("Accesso");
 } else {
-  console.log("Accesso negato");
+    console.log("Accesso negato");
+}
+
+
+// ----- Gioco dei dadi -----
+
+// Genero un numero casuale da 1 a 6 sia per il giocatore e sia per il computer
+// Confronto i due numeri per vedere quale è il più alto
+// Se il giocatore ha un numero più alto del computer vince, 
+// Se il giocatore ha un numero più basso del computer perde, 
+// Se sono uguali è pareggio
+// Quindi stampo un messaggio appropriato tenendo conto dei tre casi
+
+
+const Giocatore = Math.floor(Math.random() * 6) + 1;
+const Computer = Math.floor(Math.random() * 6) + 1;
+
+console.log(`Hai tirato un ${Giocatore}`);
+console.log(`Il computer ha tirato un ${Computer}`);
+
+if (Giocatore > Computer) {
+    console.log("Hai vinto!");
+} else if (Giocatore < Computer) {
+    console.log("Hai perso!");
+} else {
+    console.log("Pareggio!");
 }
