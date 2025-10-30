@@ -24,3 +24,33 @@ console.log('ciao mondo');
 //5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 
 //Buon lavoro e buon divertimento!
+
+
+
+
+// ----- Controllo accesso email -----
+
+// Creo un array con le email di chi può accedere
+// Chiedo all’utente di inserire la propria email
+// Controllo se l’email è nella lista e scorriamo l’array con un ciclo for per confrontare ogni email
+// Se la troviamo l'accesso è consentito, se non la troviamo l'accesso è negato e possiamo uscire dal ciclo
+// Stampo un messaggio appropriato
+
+
+const listaEmail = ["gastone@gmail.com", "gisella@gmail.com", "giorgia@gmail.com", "viola@gmail.com"];
+const emailUtente = prompt("email");
+
+let accessoConsentito = false;
+
+for (let i = 0; i < listaEmail.length; i++) {
+  if (listaEmail[i] === emailUtente) {
+    accessoConsentito = true;
+    console.log("listaEmail");
+  }
+}
+
+if (accessoConsentito) {
+  console.log("Accesso");
+} else {
+  console.log("Accesso negato");
+}
